@@ -1,0 +1,129 @@
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2E9256;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content-header {
+    background-color:#051352;
+    display: flex;
+    justify-content: center;
+    justify-content:space-between;
+    height: 65px;
+    width: 100%;       
+}
+
+.logo {  
+    height: 50px;
+    width: 50px;
+    margin:5px;
+    /*display: flex;
+    align-items: center;
+    border-radius: 8px;*/
+    transition: all 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.navbar ul {
+    /*background-color: aliceblue; */
+    height: 60px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+   /* background-color: aqua; */
+    margin: 15px;
+    transition: all 0.3s;
+}
+
+.navbar ul li:hover {
+    transform: scale(1.1);
+}
+.navbar ul li a {
+    background-color:#055318f5;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+   
+}
+
+.sesion-logo {
+    height: 45px;
+    width: 45px;
+    margin:8px;           
+}
+
+.content-total {
+    /*background-color: #a6d4a5; */
+    height: 100px;
+    margin:20px;
+    display: flex;
+    justify-content: right;
+}
+.total {
+    background-color: #FFF;
+    height: 100px;
+    width: 250px;
+    border: 1px solid;
+    border-radius: 10px;    
+}
+.table {
+    background-color:  #a6d4a5;
+    height: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid;    
+}
+.content-vuelto {
+    background-color: #a6d4a5;
+
+}
+.vuelto {
+    background-color: #FFF;
+}
+.btn-blue {
+    background-color: rgb(17, 17, 172);
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 14px;
+    border: 1px solid black;
+    border-radius:5px ;
+    cursor: pointer;
+}
+.btn-red {
+    background-color:#df3712;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 14px;
+    border: 1px solid black;
+    border-radius:5px ;
+    cursor: pointer;
+}
+
+
+
+/*
+#258f3fe5;
+
+#051352;
+
+#055318f5;
+
+background-image: url(logo.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
