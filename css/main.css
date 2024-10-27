@@ -16,6 +16,7 @@ body {
     font-style: italic;
     padding: 5px;
 }
+
 .content-header {
     background-color:#051352;
     display: flex;
@@ -73,15 +74,15 @@ body {
 }
 
 .content-total {
-   /* background-color: #a6d4a5; */
-    height: 100px;
-    margin:20px;
+    /*background-color: #a6d4a5; */
+    height: 80px;
+    margin:15px;
     display: flex;
     justify-content: right;
 }
 .total {
     background-color: #FFF;
-    height: 100px;
+    height:80px;
     width: 250px;
     border: 1px solid;
     border-radius: 10px;    
@@ -89,14 +90,22 @@ body {
 .table {
     background-color:  #a6d4a5;
     height: 300px;
-    margin: 20px;
+    margin: 15px;
     border-radius: 5px;
     border: 1px solid;    
+}
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table table td, th {
+    border: 1px solid;
 }
 .content-vuelto {
     /*background-color: #a6d4a5; */
     display: flex;
-    margin:20px;
+    margin:15px;
 }
 
 .vuelto {
@@ -105,7 +114,10 @@ body {
     border-radius: 10px;
     width: 200px;     
 }
-
+.btns {
+    
+    margin-left: 400px ;   
+}
 .btn-blue {
     background-color: rgb(17, 17, 172);
     color: #FFF;
@@ -113,9 +125,11 @@ body {
     font-weight: bold;
     padding: 14px;
     margin: 10px;
+    
     border: 1px solid black;
     border-radius:5px ;
     cursor: pointer;
+  
 }
 .btn-red {
     background-color:#df3712;
@@ -124,6 +138,7 @@ body {
     font-weight: bold;
     padding: 14px;
     margin: 10px;
+    
     border: 1px solid black;
     border-radius:5px ;
     cursor: pointer;
@@ -136,14 +151,12 @@ body {
     font-weight: bold; 
     margin: 10px;  
 }
-/*
-#258f3fe5;
 
-#051352;
 
-#055318f5;
+/* Hacer que una imagen tome todo el div
 
 background-image: url(logo.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+*/    

@@ -3,60 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Registradora</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Iniciar Sesion</title>
 </head>
-<body><div class="titulo">Caja Registradora - Despensa Don CoCo</div>
-    <header class="content-header">
-        <div>
-            <a href="#"><img src="logo.png" class="logo"></a>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">Usuarios</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Pedidos</a></li>
-                <li><a href="#">Ventas</a></li>
-            </ul>    
-        </nav>
-        <div class="sesion">
-            <a href="#"><img src="sesion.png" class="sesion-logo"></a>
-        </div>
-    </header>
-    <main>
-        <div class="content-total">
-            <p class="parrafo">Total</p> 
-            <div class="total">
-             $ 0,00
-            </div>
-        </div>
-        <div class="table">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Código</th>
-                    <th>Cantidad</th>
-                    <th>Articulo</th>
-                    <th>Precio</th>
-                    <th>Importe</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        <div class="content-vuelto">
-            <p class="parrafo">Vuelto</p>
-            <div class="vuelto">
-                $ 0,00
-               </div>
-            <input class="btn-blue" type="submit" value="Continuar">
-            <input class="btn-red"  type="submit" value="Limpiar">
-        </div>
-    </main>
+<body>
+    <div class="header-titulo">Caja Registradora - Despensa Don CoCo</div>
     
+    <div class="titulo">
+        <h3>Punto de Ventas</h3>
+        <img src="./img/express.png" alt="" class="express"/>
+    </div>
+    
+    <div class="login">
+        <img src="./img/user.png" alt="" class="logo-login"/><br>
+        <form action="">
+            <input class="name" type="text" name="name" placeholder="Usuario" maxlength="15" required/>
+            <input class="passwd" type="password" name="password" placeholder="Contraseña" maxlength="15" required/>
+            <br>
+            <button class="send" type="submit" name="send">Iniciar Sesión</button>
+        </form>    
+    </div>
+
 </body>
 </html>
