@@ -17,8 +17,8 @@ body {
     font-style: italic;
     padding: 5px;
 }
+
 .titulo {
-    /*background-color: violet;*/
     display: flex;
     justify-content: center;
     margin-top: 40px;
@@ -26,7 +26,6 @@ body {
 }
 
 h3 {
-    /*background-color:burlywood;*/
     color: bisque;
     font-style: italic;
     text-align: center;
@@ -35,6 +34,7 @@ h3 {
     align-items: center;
     margin-top: 30px;   
 }
+
 .express {
     height: 70px;
 }
@@ -44,12 +44,35 @@ h3 {
     height: 350px;
     width: 350px;
     margin: auto;
-    border: 1px solid black;
+    border: 1px solid #055318f5;
     border-radius: 8px;
+   
 }
 
 .logo-login {
     height: 70px; 
     margin: 15px; 
     margin-left: 140px;  
+}
+.form {
+   margin: 15px;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px ;
+    font-weight: bold;
+    border-radius: 1px;
+}
+
+.send {
+    background-color:#055318f5;
+    color: #FFF;
+    font-size: 16px;
+    border:none;
+    width: 100%;
+    padding: 10px;
+    margin-top:15px;
+    border-radius: 3px;
 }
