@@ -1,0 +1,27 @@
+
+.content-user {
+    background-color:  #a6d4a5;
+    height: 450px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid;
+       
+}
+
+.form-user {
+    background-color: tomato;
+    width: 70%;
+    height: 300px;
+    margin: auto; 
+    margin-top: 20px; 
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/       
+}
+
+.input {
+   
+    padding: 8px;
+
+    
+}

@@ -1,85 +1,11 @@
-* { 
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #2E9256;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.titulo {
-    background-color: black;
-    color: #FFF;
-    height: 35px;
-    text-align: center;
-    font-style: italic;
-    padding: 5px;
-}
-
-.content-header {
-    background-color:#051352;
-    display: flex;
-    justify-content: center;
-    justify-content:space-between;
-    height: 65px;
-    width: 100%;       
-}
-
-.logo {  
-    height: 50px;
-    width: 50px;
-    margin:5px;
-    /*display: flex;
-    align-items: center;
-    border-radius: 8px;*/
-    transition: all 0.3s;
-}
-
-.logo:hover {
-    transform: scale(1.2);
-}
-
-.navbar ul {
-    /*background-color: aliceblue; */
-    height: 60px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-.navbar ul li {
-   /* background-color: aqua; */
-    margin: 15px;
-    transition: all 0.3s;
-}
-
-.navbar ul li:hover {
-    transform: scale(1.1);
-}
-.navbar ul li a {
-    background-color:#055318f5;
-    color: #FFF;
-    text-decoration: none;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-   
-}
-
-.sesion-logo {
-    height: 45px;
-    width: 45px;
-    margin:8px;           
-}
 
 .content-total {
-    /*background-color: #a6d4a5; */
     height: 80px;
     margin:15px;
     display: flex;
     justify-content: right;
 }
+
 .total {
     background-color: #FFF;
     height:80px;
@@ -87,6 +13,7 @@ body {
     border: 1px solid;
     border-radius: 10px;    
 }
+
 .table {
     background-color:  #a6d4a5;
     height: 300px;
@@ -94,6 +21,7 @@ body {
     border-radius: 5px;
     border: 1px solid;    
 }
+
 .table table {
     width: 100%;
     border-collapse: collapse;
@@ -102,8 +30,8 @@ body {
 .table table td, th {
     border: 1px solid;
 }
+
 .content-vuelto {
-    /*background-color: #a6d4a5; */
     display: flex;
     margin:15px;
 }
@@ -114,23 +42,24 @@ body {
     border-radius: 10px;
     width: 200px;     
 }
+
 .btns {
     
     margin-left: 400px ;   
 }
+
 .btn-blue {
     background-color: rgb(17, 17, 172);
     color: #FFF;
     font-size: 20px;
     font-weight: bold;
     padding: 14px;
-    margin: 10px;
-    
+    margin: 10px;    
     border: 1px solid black;
     border-radius:5px ;
-    cursor: pointer;
-  
+    cursor: pointer;  
 }
+
 .btn-red {
     background-color:#df3712;
     color: #FFF;

@@ -4,28 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
     <title>Registradora</title>
 </head>
 <body>
-    <header>
-        <div class="titulo">Caja Registradora - Despensa Don CoCo</div>
-        <div class="content-header">
-            <div>
-            <a href="#"><img src="../img/logo.png" class="logo"></a>
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#">Usuarios</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Pedidos</a></li>
-                    <li><a href="#">Ventas</a></li>
-                </ul>    
-            </nav>
-            <div class="sesion">
-                <a href="#"><img src="../img/sesion.png" class="sesion-logo"></a>
-            </div>
-        </div>    
-    </header>
+    <?php require('header.php')?>
     <main>
         <div class="content-total">
             <p class="parrafo">Total</p> 

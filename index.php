@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="./css/login.css">
     <title>Iniciar Sesion</title>
 </head>
 <body>
     <div class="header-titulo">Caja Registradora - Despensa Don CoCo</div>
-    
     <div class="titulo">
         <h3>Punto de Ventas</h3>
         <img src="./img/express.png" alt="" class="express"/>
