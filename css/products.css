@@ -1,5 +1,4 @@
-
-.content-user {
+.content-prod {
     background-color:  #a6d4a5;
     height: 450px;
     margin: 20px 20px;
@@ -9,30 +8,44 @@
        
 }
 
-.form-user {
-    /*background-color: tomato;*/
+.form-prod {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 60%;
+   height: 300px;
+   margin: auto;
+   margin-top: 40px;
+   padding: 10px;
+   
+}
+
+.caja1 {
+   
+    width: 350px;
     height: 300px;
-    width: 50%; 
-    margin: auto;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
+    margin: 20px;
+    padding: 15px;
+}
+.caja2 {
+   
+    width: 350px;
+    height: 300px;
+    margin: 20px;
+    padding: 15px;
 }
 .label {
     font-style: italic;
     font-size: 20px;
-    font-weight: bold;
-    margin-right: 10px;
-    padding: 15px;    
+    font-weight: bold; 
 }
 .input {
     width: 300px;
     height: 35px;
     padding: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 1px solid #055318f5;
-    
     border-radius: 10px;
 
 }
