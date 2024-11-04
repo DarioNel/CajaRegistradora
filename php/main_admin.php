@@ -1,3 +1,9 @@
+<?php
+// Iniciar la sesión si aún no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +14,20 @@
     <title>Registradora</title>
 </head>
 <body>
-    <?php require('header.php')?>
+    <?php require('header.php');?>
     <main>
+        <?php
+        // Verificar si el usuario está autenticado
+        if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
+            $user = $_SESSION['nombre'];
+            $type = $_SESSION['tipo'];
+            echo "Bienvenido: $user<br>";
+        } else {
+            // Si no hay una sesión iniciada, entonces...
+            header("Location: hello.php");
+            exit();
+        }
+        ?>
         <div class="content-total">
             <p class="parrafo">Total</p> 
             <div class="total">

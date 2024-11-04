@@ -2,12 +2,12 @@
     <div class="titulo">Caja Registradora - Despensa Don CoCo</div>
     <div class="content-header">
         <div>
-            <a href="main_admin.php"><img src="../img/logo.png" class="logo"></a>
+            <a href="main_user.php"><img src="../img/logo.png" class="logo"></a>
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="user.php">Usuarios</a></li>
-                <li><a href="products.php">Productos</a></li>
+                <li><a href="#">Usuarios</a></li>
+                <li><a href="#">Productos</a></li>
                 <li><a href="orders.php">Pedidos</a></li>
                 <li><a href="sales.php">Ventas</a></li>
             </ul>    

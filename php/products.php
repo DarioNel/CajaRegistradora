@@ -1,3 +1,9 @@
+<?php
+// Iniciar la sesión si aún no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +16,20 @@
 <body>
     <?php require('header.php')?>
     <main>
+        <?php
+        // Verificar si el usuario está autenticado
+        if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
+            $user = $_SESSION['nombre'];
+            $type = $_SESSION['tipo'];
+            echo "Bienvenido: $user<br>";
+        } else {
+            // Si no hay una sesión iniciada, entonces...
+            header("Location: hello.php");
+            exit();
+        }
+        ?>         
         <div class="content-prod">
-            
-            <form class="form-prod" action="" method="">
-                
+            <form class="form-prod" action="" method="POST">
                 <div class="caja1">
                     <label class="label" for="code">Codigo de Barras</label>
                     <input class="input" type="text" name="code" id="code" placeholder="Escriba el Código" maxlength="15" required/>      

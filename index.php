@@ -15,9 +15,10 @@
     
     <div class="login">
         <img src="./img/user.png" alt="" class="logo-login"/>
-        <form class="form" action="">
-            <input class="input" type="text" name="name" placeholder="Usuario" maxlength="15" required/>
-            <input class="input" type="password" name="password" placeholder="Contraseña" maxlength="15" required/>
+        <form class="form" action="./php/authenticate.php" method="POST">
+            
+            <input class="input" type="text" name="user" placeholder="Usuario" maxlength="15" required/>
+            <input class="input" type="password" name="passwd" placeholder="Contraseña" maxlength="15" required/>
             
             <button class="send" type="submit" name="send">Iniciar Sesión</button>
         </form>    
