@@ -11,7 +11,7 @@ include ('connection.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tables.css">
     <link rel="stylesheet" href="../css/header.css">
     <title>Gestión de Usuarios</title>
 </head>
@@ -37,7 +37,7 @@ include ('connection.php');
                     <th>Usuario</th>
                     <th>Contraseña</th>
                     <th>Tipo de Usuario</th>
-                    <th>Editar</th>    
+                    <th>Acciones</th>    
                 </tr>
                 <?php 
                 $sql_user = "SELECT * FROM Usuarios";
@@ -53,11 +53,9 @@ include ('connection.php');
                     <td><?php echo $row['Clave'];?></td>
                     <td><?php echo $row['Tipo'];?></td>
                     <td>
-                        <a href="user_modify.php?id=<?php echo $row['Id_usuario']?>>hola</a>
+                        <button class="btn-modi"><a href="user_modify.php?id=<?php echo $row['Id_usuario']?>">Modificar</a></button>
+                        <button class="btn-del"><a href="user_delete.php?id=<?php echo $row['Id_usuario']?>">Eliminar</a></button>
                     </td>
-                    <td>
-                        <a href="user_delete.php?id=<?php echo $row['Id_usuario']?>
-                    </td>     
                 </tr>
                 <?php }?>
             </table>    

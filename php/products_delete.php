@@ -8,18 +8,18 @@ include ('connection.php');
 if (isset($_GET['id'])){
     $id = trim($_GET['id']);
   
-    // Realiza la consulta sql, para eliminar los datos de la tabla usuarios
-    $sql_del_user = "DELETE FROM Usuarios WHERE Id_usuario = $id";
+    // Realiza la consulta sql, para eliminar los datos de la tabla productos
+    $sql_del_pro = "DELETE FROM Productos WHERE Id_producto = $id";
     
 
     // Si la conexion, y la consulta es correcta, los almaceno en una variable llamada result.         
-    $result = $conn->query($sql_del_user);
+    $result = $conn->query($sql_del_pro);
 
     if (!$result){
         // Mostrame el siguiente error.
         die("Error en la consulta en la base de datos: " . $conn->connect_error);
     }
-    header("Location: user_table.php");
+    header("Location: products_table.php");
 }
 // Cerrar la conexión a la base de datos
 $conn->close();

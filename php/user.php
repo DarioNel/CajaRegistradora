@@ -37,12 +37,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 <label class="label" for="select">Tipo</label>
                 <select class="" name="select" id="select">
                         <option value="none" disabled selected >Elija tipo de Usuario</option>
-                        <option value="Adminstrador">Administrador</option>
+                        <option value="Administrador">Administrador</option>
                         <option value="Empleado">Empleado</option>	
                 </select>             
                 <div class="btns">
                     <button class="btn-blue" type="submit" name="load">Cargar</button>
-                    <a href="user_table.php" class="btn-red">Modificar</a>
+                    <a href="user_table.php" class="btn-green">Mostrar</a>
                 </div>
             </form> 
         </div>

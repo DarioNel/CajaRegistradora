@@ -57,6 +57,9 @@ if (session_status() == PHP_SESSION_NONE) {
             <div class="vuelto">
                 $ 0,00
             </div>
+            <div>
+                <input type=text name="cod_barras">
+            </div>
             <div class="btns">
                 <button class="btn-blue" type="submit" name="Continuar">Continuar</button>
                 <button class="btn-red"  type="submit" name="Limpiar">Limpiar</button>

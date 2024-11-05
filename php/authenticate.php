@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }else {
         // Mostrar error de autenticación
-        echo "vali";
+        echo "ERROR USUARIO O CONTRASEÑA INCORRECTO";
         exit();
     }
 

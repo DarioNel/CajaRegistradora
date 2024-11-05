@@ -39,9 +39,9 @@ if (session_status() == PHP_SESSION_NONE) {
                     <input class="input" type="text" name="stock" id="stock" placeholder="Ingrese la Cantidad" maxlength="15" required/>
                 </div>
                 <div class="caja2">
-                    <label class="label" for="price">Precio</label>
+                    <label class="label" for="price">Precio de Venta</label>
                     <input class="input" type="text" name="price" id="price" placeholder="Ingrese un Precio" maxlength="15" required/>
-                    <label class="label" for="price">Precio</label>
+                    <label class="label" for="price">Precio de Costo</label>
                     <input class="input" type="text" name="price2" id="price2" placeholder="Ingrese un Precio" maxlength="15" required/>
                     <label class="label" for="select">Categoría</label><br><br>    
                     <select class="" name="select" id="select">
@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 
                 <div class="btns">
                     <button class="btn-blue" type="submit" name="Confirmar">Cargar </button>
-                    <button class="btn-red"  type="submit" name="Modificar">Modificar</button>
+                    <a href="products_table.php" class="btn-red">Mostrar</a>
                 </div>
 
             </form> 

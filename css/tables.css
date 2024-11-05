@@ -1,0 +1,47 @@
+.table {
+    background-color:  #a6d4a5;
+    height: 300px;
+    margin: 15px;
+    border-radius: 5px;
+    border: 1px solid;    
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table table td, th {
+    border: 1px solid;
+}
+
+
+.btn-modi {
+    text-decoration: none;
+    background-color: #1253df;
+    padding: 8px;
+    margin: 1px;
+    border-radius: 20px;
+    border: 1px solid black;
+
+}
+.btn-modi a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-del {
+    text-decoration: none;
+    background-color: #df3712;
+    padding: 8px;
+    margin: 1px;
+    border-radius: 20px;
+    border: 1px solid black;
+
+}
+.btn-del a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -52,8 +52,8 @@
     cursor: pointer;  
 }
 
-.btn-red {
-    background-color:#df3712;
+.btn-green {
+    background-color: #df3712;
     color: #FFF;
     font-size: 20px;
     font-weight: bold;
