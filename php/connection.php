@@ -1,6 +1,6 @@
 <?php
 // Declaración de variables 
-$servername = "172.19.0.3";
+$servername = "172.19.0.2";
 $username = "root";
 $password = "1234";
 $database = "negocio";

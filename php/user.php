@@ -21,6 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
         if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
             $user = $_SESSION['nombre'];
             $type = $_SESSION['tipo'];
+            echo "Usuario: $type<br>";
             echo "Bienvenido: $user<br>";
         } else {
             // Si no hay una sesión iniciada, entonces...
@@ -42,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 </select>             
                 <div class="btns">
                     <button class="btn-blue" type="submit" name="load">Cargar</button>
-                    <a href="user_table.php" class="btn-green">Mostrar</a>
+                    <a href="user_table.php" class="btn-red">Mostrar</a>
                 </div>
             </form> 
         </div>

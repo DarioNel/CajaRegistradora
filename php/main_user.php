@@ -21,11 +21,11 @@ if (session_status() == PHP_SESSION_NONE) {
         if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
             $user = $_SESSION['nombre'];
             $type = $_SESSION['tipo'];
-            echo "Bienvenido: $user<br>";
+            echo "Usuario: $type<br>";
+            echo "Bienvenido: $user";
         } else {
             // Si no hay una sesión iniciada, entonces...
-            header("Location: hello.php");
-            exit();
+            echo "ERROR de SESSION";
         }
         ?>
         <div class="content-total">

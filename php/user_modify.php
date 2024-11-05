@@ -28,20 +28,20 @@ if (isset($_GET['id'])){
     
     if ($result->num_rows == 1){
         $row = $result->fetch_assoc();
-        $newuser = $row['Nombre']; 
-        $newpass = $row['Clave']; 
-        $newtype = $row['Tipo'];
+        $user = $row['Nombre']; 
+        $pass = $row['Clave']; 
+        $type = $row['Tipo'];
     }
 
     if (isset($_POST['modify'])){
         $id = trim($_GET['id']);
-        $newuser = trim($_POST['user']);
-        $newpass= trim($_POST['password']);
-        $newtype = trim($_POST['select']);
+        $user = trim($_POST['user']);
+        $pass= trim($_POST['password']);
+        $type = trim($_POST['category']);
         
         // Realiza la consulta sql, para modificar los datos de la tabla usuarios
         $sql_update_user = "UPDATE Usuarios 
-                            SET Nombre = '$newuser', Clave = '$newpass', Tipo = '$newtype'
+                            SET Nombre = '$user', Clave = '$pass', Tipo = '$type'
                             WHERE Id_usuario = $id";
         //
         $result2 = $conn->query($sql_update_user);
@@ -75,7 +75,8 @@ ob_end_flush(); // Envía el contenido al navegador
         if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
             $user = $_SESSION['nombre'];
             $type = $_SESSION['tipo'];
-            echo "Bienvenido: $user<br>";
+            echo "Usuario: $type<br>";
+            echo "Bienvenido: $user";
         } else {
             // Si no hay una sesión iniciada, entonces...
             echo "ERROR de SESSION";
@@ -84,11 +85,11 @@ ob_end_flush(); // Envía el contenido al navegador
         <div class="content-user">
             <form class="form-user" action="user_modify.php?id=<?php echo $_GET['id'];?>" method="POST">
                 <label class="label" for="user">Usuario</label>
-                <input class="input" type="text" name="user" id="user" value="<?php echo $newuser?>" placeholder="Escriba un Usuario" maxlength="15" required/>      
+                <input class="input" type="text" name="user" id="user" value="<?php echo $user?>" placeholder="Escriba un Usuario" maxlength="15" required/>      
                 <label class="label" for="passwd">Contraseña</label>
-                <input class="input" type="password" name="password" id="passwd" value="<?php echo $newpass?>" placeholder="Escriba una Contraseña" maxlength="15" required/>
+                <input class="input" type="password" name="password" id="passwd" value="<?php echo $pass?>" placeholder="Escriba una Contraseña" maxlength="15" required/>
                 <label class="label" for="select">Tipo</label>
-                <select class="" name="select" id="select" value="<?php echo $newtype?>">
+                <select class="" name="category" id="select" value="<?php echo $type?>">
                         <option value="none" disabled selected >Elija tipo de Usuario</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Empleado">Empleado</option>	

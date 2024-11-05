@@ -13,7 +13,7 @@ include ('connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/tables.css">
     <link rel="stylesheet" href="../css/header.css">
-    <title>Gestión de Usuarios</title>
+    <title>Gestión de Productos</title>
 </head>
 <body>
     <?php require('header.php');?>
@@ -35,27 +35,33 @@ include ('connection.php');
             <table>
                 <tr>
                     <th>ID</th>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Tipo de Usuario</th>
-                    <th>Acciones</th>    
+                    <th>Código</th>
+                    <th>Articulo</th>
+                    <th>Stock</th>
+                    <th>Precio Venta</th>
+                    <th>Precio Costo</th>
+                    <th>Categoria</th>
+                    <th>Acciones</th>
                 </tr>
                 <?php 
-                $sql_user = "SELECT * FROM Usuarios";
-                $result = $conn->query($sql_user);
+                $sql_prod = "SELECT * FROM Productos";
+                $result = $conn->query($sql_prod);
                 if (!$result){
                     // Mostrame el siguiente error.
                     die("Error en la consulta en la base de datos: " . $conn->connect_error);
                 }
                 while($row = $result->fetch_assoc()) {?>  
                 <tr>
-                    <td><?php echo $row['Id_usuario'];?></td>
+                    <td><?php echo $row['Id_producto'];?></td>
+                    <td><?php echo $row['Cod_Barras'];?></td>
                     <td><?php echo $row['Nombre'];?></td>
-                    <td><?php echo $row['Clave'];?></td>
-                    <td><?php echo $row['Tipo'];?></td>
+                    <td><?php echo $row['Stock'];?></td>
+                    <td><?php echo $row['Precio_Venta'];?></td>
+                    <td><?php echo $row['Precio_Costo'];?></td>
+                    <td><?php echo $row['Categoria'];?></td>
                     <td>
-                        <button class="btn-modi"><a href="user_modify.php?id=<?php echo $row['Id_usuario']?>">Modificar</a></button>
-                        <button class="btn-del"><a href="user_delete.php?id=<?php echo $row['Id_usuario']?>">Eliminar</a></button>
+                        <button class="btn-modi"><a href="products_modify.php?id=<?php echo $row['Id_producto']?>">Modificar</a></button>
+                        <button class="btn-del"><a href="products_delete.php?id=<?php echo $row['Id_producto']?>">Eliminar</a></button>
                     </td>
                 </tr>
                 <?php }?>
