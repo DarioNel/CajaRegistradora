@@ -1,3 +1,9 @@
+<?php
+// Iniciar la sesión si aún no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +16,18 @@
 <body>
     <?php require('header.php')?>
     <main>
+    <?php
+        // Verificar si el usuario está autenticado
+        if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
+            $user = $_SESSION['nombre'];
+            $type = $_SESSION['tipo'];
+            echo "Usuario: $type<br>";
+            echo "Bienvenido: $user";
+        } else {
+            // Si no hay una sesión iniciada, entonces...
+            echo "ERROR de SESSION";
+        }
+        ?>
         <div class="content-user">
             
         </div>

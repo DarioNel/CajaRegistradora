@@ -2,6 +2,11 @@
 // Inicia el buffer
 ob_start(); 
 
+// Iniciar la sesión si aún no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Incluyo la conexion a la base de datos.
 include ('connection.php');
 

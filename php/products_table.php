@@ -48,7 +48,7 @@ include ('connection.php');
                 $result = $conn->query($sql_prod);
                 if (!$result){
                     // Mostrame el siguiente error.
-                    die("Error en la consulta en la base de datos: " . $conn->connect_error);
+                    die("Error en la consulta en la base de datos: " . $conn->error);
                 }
                 while($row = $result->fetch_assoc()) {?>  
                 <tr>

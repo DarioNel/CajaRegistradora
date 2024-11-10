@@ -13,7 +13,7 @@
             </ul>    
         </nav>
         <div class="sesion">
-            <a href="../index.php"><img src="../img/sesion.png" class="sesion-logo"></a>
+            <a href="destroy.php"><img src="../img/sesion.png" class="sesion-logo"></a>
         </div>
     </div>            
 </header>

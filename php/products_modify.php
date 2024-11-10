@@ -23,7 +23,7 @@ if (isset($_GET['id'])){
 
     if (!$result){
         // Mostrame el siguiente error.
-        die("Error en la consulta en la base de datos: " . $conn->connect_error);
+        die("Error en la consulta en la base de datos: " . $conn->error);
     }
     
     if ($result->num_rows == 1){
@@ -57,7 +57,7 @@ if (isset($_GET['id'])){
 
         if (!$result2){
             // Mostrame el siguiente error.
-            die("Error en la consulta en la base de datos: " . $conn->connect_error);
+            die("Error en la consulta en la base de datos: " . $conn->error);
         }
     }    
 }
