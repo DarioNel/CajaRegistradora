@@ -8,7 +8,6 @@
             <ul>
                 <li><a href="user.php">Usuarios</a></li>
                 <li><a href="products.php">Productos</a></li>
-                <li><a href="orders.php">Pedidos</a></li>
                 <li><a href="sales.php">Ventas</a></li>
             </ul>    
         </nav>

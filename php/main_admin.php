@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['vaciar_carrito'])) {
                 );
             }
         } else {
-            echo "Producto no encontrado.";
+            //echo "Producto no encontrado.";
         }
     }
 }
@@ -83,11 +83,23 @@ $conn->close();
 </head>
 <body>
     <?php require('header.php');?>
-    <main>    
+    <main>
+        <?php
+        // Verificar si el usuario está autenticado
+        if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
+            $user = $_SESSION['nombre'];
+            $type = $_SESSION['tipo'];
+            echo "Usuario: $type<br>";
+            echo "Bienvenido: $user";
+        } else {
+            // Si no hay una sesión iniciada, entonces...
+            echo "ERROR de SESSION";
+        }
+        ?>    
         <div class="content-total">
             <p class="parrafo">Total</p> 
             <div class="total price">
-                 <?php echo "$" .  number_format($total, 2); ?>
+                 <span class="total-valor"><?php echo "$" .  number_format($total, 2);?></span>
             </div>
         </div>
         <div class="table">
@@ -122,7 +134,7 @@ $conn->close();
                     }
                     
                 } else {
-                    echo "<tr><td colspan='7'>No hay productos en el carrito</td></tr>";
+                    echo "<tr><td colspan='7'>No hay productos en la caja</td></tr>";
                 }
                 ?>  
                 </tr>
@@ -131,12 +143,24 @@ $conn->close();
         <div class="content-vuelto">
             <p class="parrafo">Vuelto</p>
             <div class="vuelto">
-                $ 0,00
+                <?php 
+                // Verifico si el valor 'import' esta definido y es numerico
+                if (isset($_POST['import']) && is_numeric($_POST['import'])) {
+                    $import = (float) $_POST['import']; // Convertimos a float
+                } else {
+                    $import = 0; 
+                }
+
+                $vuelto = $import - $total;
+                ?>
+                <span class="vuelto-valor"><?php echo "$" . number_format($vuelto, 2);?></span>
+                
             </div>
-            <div>
+            <div class="input-barras">
                 <form action="main_admin.php" method="POST">
                     <input type="text" name="valor" placeholder="Código de barras" onkeydown="if(event.key === 'Enter'){this.form.submit();}" required/>
-                     <input type="number" name="cant" value="1" min="1" onkeydown="if(event.key === 'Enter'){this.form.submit();}" required/>
+                    <input class="cant" type="number" name="cant" value="1" min="1" onkeydown="if(event.key === 'Enter'){this.form.submit();}" required/>
+                    <input class="import" type="number" name="import" placeholder="Importe" onkeydown="if(event.key === 'Enter'){this.form.submit();}" required/>
                 </form>
             </div>
             <div class="btns">

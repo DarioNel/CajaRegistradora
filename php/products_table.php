@@ -39,7 +39,7 @@ include ('connection.php');
                     <th>Articulo</th>
                     <th>Stock</th>
                     <th>Precio Venta</th>
-                    <th>Precio Costo</th>
+                    
                     <th>Categoria</th>
                     <th>Acciones</th>
                 </tr>
@@ -57,7 +57,7 @@ include ('connection.php');
                     <td><?php echo $row['Nombre'];?></td>
                     <td><?php echo $row['Stock'];?></td>
                     <td><?php echo $row['Precio_Venta'];?></td>
-                    <td><?php echo $row['Precio_Costo'];?></td>
+                   
                     <td><?php echo $row['Categoria'];?></td>
                     <td>
                         <button class="btn-modi"><a href="products_modify.php?id=<?php echo $row['Id_producto']?>">Modificar</a></button>

@@ -48,7 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }else {
         // Mostrar error de autenticación
-        echo "ERROR USUARIO O CONTRASEÑA INCORRECTO";
+        //echo "ERROR USUARIO O CONTRASEÑA INCORRECTO";
+        header("Location: login.php");
         exit();
     }
 

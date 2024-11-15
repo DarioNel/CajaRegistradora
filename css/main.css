@@ -7,11 +7,18 @@
 }
 
 .total {
-    background-color: #FFF;
+    background-color: #f0f19f;
     height:80px;
     width: 250px;
     border: 1px solid;
-    border-radius: 10px;    
+    border-radius: 10px;
+    text-align: center;
+}
+
+.total-valor {
+    font-size: 40px; 
+    font-weight: bold; 
+    color: rgba(0, 0, 0, 0.884); 
 }
 
 .table {
@@ -19,7 +26,8 @@
     height: 300px;
     margin: 15px;
     border-radius: 5px;
-    border: 1px solid;    
+    border: 1px solid;
+    text-align: center;    
 }
 
 .table table {
@@ -34,18 +42,41 @@
 .content-vuelto {
     display: flex;
     margin:15px;
+ 
 }
 
 .vuelto {
-    background-color: #FFF;
+    background-color: #f0f19f;
     border: 1px solid;
     border-radius: 10px;
-    width: 200px;     
+    width: 200px;  
+    text-align: center;     
+}
+
+.vuelto-valor {
+    
+    font-size: 35px; 
+    font-weight: bold; 
+    color: rgba(0, 0, 0, 0.884); 
+}
+
+.input-barras {
+    margin-left: 10px;
+
+}
+
+.cant {
+    width: 100px;
+}
+
+.import {
+    width: 100px;
 }
 
 .btns {
     
-    margin-left: 400px ;   
+    margin-left: 200px ;
+    display: flex;   
 }
 
 .btn-blue {
@@ -53,7 +84,7 @@
     color: #FFF;
     font-size: 20px;
     font-weight: bold;
-    padding: 14px;
+    padding: 8px;
     margin: 10px;    
     border: 1px solid black;
     border-radius:5px ;
@@ -65,7 +96,7 @@
     color: #FFF;
     font-size: 20px;
     font-weight: bold;
-    padding: 14px;
+    padding: 16px;
     margin: 10px;
     
     border: 1px solid black;

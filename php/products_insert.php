@@ -17,12 +17,12 @@ if (isset($_POST['loadpro'])) {
     $prod = $_POST['products'];
     $stock = $_POST['stock'];
     $price = $_POST['price'];
-    $price2 = $_POST['price2'];
+    
     $type = $_POST['category'];
 
     // Insertar datos en la tabla Productos
-    $sql = "INSERT INTO Productos (Cod_Barras, Nombre, Stock, Precio_Venta, Precio_Costo, Categoria)
-    VALUES ('$code', '$prod', '$stock', '$price','$price2','$type')";
+    $sql = "INSERT INTO Productos (Cod_Barras, Nombre, Stock, Precio_Venta, Categoria)
+    VALUES ('$code', '$prod', '$stock', '$price','$type')";
     echo $sql;
 
     // Si la conexion, y la consulta es correcta, los almaceno en una variable llamada result.         

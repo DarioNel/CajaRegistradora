@@ -41,8 +41,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="caja2">
                     <label class="label" for="price">Precio de Venta</label>
                     <input class="input" type="text" name="price" id="price" placeholder="Ingrese un Precio" maxlength="15" required/>
-                    <label class="label" for="price">Precio de Costo</label>
-                    <input class="input" type="text" name="price2" id="price2" placeholder="Ingrese un Precio" maxlength="15" required/>
+                    
                     <label class="label" for="select">Categoría</label><br><br>    
                     <select class="" name="category" id="select">
                         <option value="select" disabled selected >Elija una Categoría</option>

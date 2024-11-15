@@ -6,9 +6,6 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#">Usuarios</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="orders.php">Pedidos</a></li>
                 <li><a href="sales.php">Ventas</a></li>
             </ul>    
         </nav>

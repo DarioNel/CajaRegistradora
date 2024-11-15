@@ -32,7 +32,7 @@ if (isset($_GET['id'])){
         $pro = $row['Nombre']; 
         $stock = $row['Stock'];
         $price = $row['Precio_Venta']; 
-        $price2 = $row['Precio_Costo']; 
+        
         $type = $row['Categoria'];
     }
 
@@ -42,13 +42,13 @@ if (isset($_GET['id'])){
         $pro= trim($_POST['products']);
         $stock = trim($_POST['stock']);
         $price = trim($_POST['price']);
-        $price2= trim($_POST['price2']);
+        
         $type = trim($_POST['category']);
         
         // Realiza la consulta sql, para modificar los datos de la tabla usuarios
         $sql_update_prod = "UPDATE Productos 
                             SET Cod_Barras = '$code', Nombre = '$pro', Stock = '$stock',
-                            Precio_Venta = '$price', Precio_Costo = '$price2', Categoria = '$type'
+                            Precio_Venta = '$price', Categoria = '$type'
                             WHERE Id_producto = $id";
         //
         $result2 = $conn->query($sql_update_prod);
@@ -102,8 +102,7 @@ ob_end_flush(); // Envía el contenido al navegador
                 <div class="caja2">
                     <label class="label" for="price">Precio de Venta</label>
                     <input class="input" type="text" name="price" id="price" value="<?php echo $price?>" placeholder="Ingrese un Precio" maxlength="15" required/>
-                    <label class="label" for="price">Precio de Costo</label>
-                    <input class="input" type="text" name="price2" id="price2" value="<?php echo $price2?>" placeholder="Ingrese un Precio" maxlength="15" required/>
+                
                     <label class="label" for="select">Categoría</label><br><br>    
                     <select class="" name="category" id="select" value="<?php echo $type?>">
                         <option value="select" disabled selected >Elija una Categoría</option>

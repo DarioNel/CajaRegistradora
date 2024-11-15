@@ -1,12 +1,15 @@
 <?php
+session_start();
+include('connection.php'); 
 // Iniciar la sesión si aún no está iniciada
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();    
+    session_start();
 }
 // Inicia la sesión para el carrito si no está ya iniciada
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = array();
 }
+
 // Función para vaciar el carrito
 if (isset($_POST['vaciar_carrito'])) {
     $_SESSION['carrito'] = array(); // Vaciar el carrito
@@ -55,8 +58,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['vaciar_carrito'])) {
                 );
             }
         } else {
-            echo "Producto no encontrado.";
+            //echo "Producto no encontrado.";
         }
+    }
+}
+// Cálculo del total
+$total = 0;
+if (!empty($_SESSION['carrito'])) {
+    foreach ($_SESSION['carrito'] as $producto) {
+        $importe = $producto['precio'] * $producto['cantidad'];
+        $total += $importe;
     }
 }
 $conn->close();
@@ -71,7 +82,7 @@ $conn->close();
     <title>Registradora</title>
 </head>
 <body>
-    <?php require('header_user.php');?>
+    <?php require('header.php');?>
     <main>
         <?php
         // Verificar si el usuario está autenticado
@@ -84,11 +95,11 @@ $conn->close();
             // Si no hay una sesión iniciada, entonces...
             echo "ERROR de SESSION";
         }
-        ?>
+        ?>    
         <div class="content-total">
             <p class="parrafo">Total</p> 
-            <div class="total">
-             $ 0,00
+            <div class="total price">
+                 <span class="total-valor"><?php echo "$" .  number_format($total, 2);?></span>
             </div>
         </div>
         <div class="table">
@@ -96,27 +107,68 @@ $conn->close();
                 <tr>
                     <th>ID</th>
                     <th>Código</th>
+                    <th>Nombre</th>
                     <th>Cantidad</th>
-                    <th>Articulo</th>
                     <th>Precio</th>
                     <th>Importe</th>
+                    <th>Acción</th>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <?php
+                if (!empty($_SESSION['carrito'])) {
+                    //$total = 0;
+                    foreach ($_SESSION['carrito'] as $producto) {
+                        $importe = $producto['precio'] * $producto['cantidad'];
+                        //$total += $importe;
+                        echo "<tr>
+                                <td>{$producto['id_producto']}</td>
+                                <td>{$producto['codigo']}</td>
+                                <td>{$producto['nombre']}</td>
+                                <td>{$producto['cantidad']}</td>
+                                <td>{$producto['precio']}</td>
+                                <td>$importe</td>
+                                <td>
+                                    <a href='main_admin.php?eliminar_producto={$producto['codigo']}'>Eliminar</a>
+                                </td>
+                              </tr>";
+                    }
+                    
+                } else {
+                    echo "<tr><td colspan='7'>No hay productos en la caja</td></tr>";
+                }
+                ?>  
                 </tr>
             </table>
         </div>
         <div class="content-vuelto">
             <p class="parrafo">Vuelto</p>
             <div class="vuelto">
-                $ 0,00
+                <?php 
+                // Verifico si el valor 'import' esta definido y es numerico
+                if (isset($_POST['import']) && is_numeric($_POST['import'])) {
+                    $import = (float) $_POST['import']; // Convertimos a float
+                } else {
+                    $import = 0; 
+                }
+
+                $vuelto = $import - $total;
+                ?>
+                <span class="vuelto-valor"><?php echo "$" . number_format($vuelto, 2);?></span>
+                
+            </div>
+            <div class="input-barras">
+                <form action="main_admin.php" method="POST">
+                    <input type="text" name="valor" placeholder="Código de barras" onkeydown="if(event.key === 'Enter'){this.form.submit();}" required/>
+                    <input class="cant" type="number" name="cant" value="1" min="1" onkeydown="if(event.key === 'Enter'){this.form.submit();}" required/>
+                    <input class="import" type="number" name="import" placeholder="Importe" onkeydown="if(event.key === 'Enter'){this.form.submit();}" required/>
+                </form>
             </div>
             <div class="btns">
                 <button class="btn-blue" type="submit" name="Continuar">Continuar</button>
-                <button class="btn-red"  type="submit" name="Limpiar">Limpiar</button>
+                <!-- Botón para vaciar el carrito -->
+                <form action="main_admin.php" method="POST">
+                    <button class="btn-red" type="submit" name="vaciar_carrito">Limpiar</button>
+                </form>
             </div>
         </div>
     </main>
