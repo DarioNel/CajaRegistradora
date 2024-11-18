@@ -25,9 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     }        
  
     $id_usuario = $_SESSION['id_user'];
+    $totalcompras = $_SESSION['total'];
 
-    $sql2 = "INSERT INTO Ventas (Fecha, Id_usuario, Id_cliente)
-    VALUES ('$fecha','$id_usuario', '$id_cliente' )";
+    $sql2 = "INSERT INTO Ventas (Fecha, Total, Tipo_pago, Id_usuario, Id_cliente)
+    VALUES ('$fecha','$totalcompras','$pago','$id_usuario','$id_cliente' )";
 
     if ($conn->query($sql2) === TRUE) {
         // Obtengo el Id de ventas
@@ -37,13 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         echo "Error: " . $sql2 . "<br>" . $conn->error;
     }
     
-    $totalcompras = $_SESSION['total'];
-
     foreach ($_SESSION['carrito'] as $producto){
 
         $importe = $producto['precio'] * $producto['cantidad'];
-        $sql3 = "INSERT INTO Detalles_Ventas (Id_venta, Id_producto, Cantidad, Importe, Total, Tipo_pago)
-                 VALUES ('$id_ventas', '{$producto['id_producto']}', '{$producto['cantidad']}', '$importe', '$totalcompras', '$pago')";
+        $sql3 = "INSERT INTO Detalles_Ventas (Id_venta, Id_producto, Cantidad, Importe)
+                 VALUES ('$id_ventas', '{$producto['id_producto']}', '{$producto['cantidad']}', '$importe')";
 
                  if ($conn->query($sql3) === FALSE) {
                     echo "Error al insertar los datos en la tabla detalle ventas" . $conn->error;

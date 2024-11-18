@@ -1,0 +1,53 @@
+CREATE DATABASE negocio;
+
+USE negocio;
+
+-- Tabla Usuarios
+
+CREATE TABLE Usuarios (
+    Id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(70) NOT NULL,
+    Clave VARCHAR(70) NOT NULL,
+    Tipo VARCHAR(50) NOT NULL
+);
+
+-- Tabla Productos
+CREATE TABLE Productos (
+    Id_producto INT PRIMARY KEY AUTO_INCREMENT,
+    Cod_Barras VARCHAR(70) NOT NULL,
+    Nombre VARCHAR(70) NOT NULL,
+    Stock INT NOT NULL,
+    Precio_Venta DECIMAL(10, 2) NOT NULL,
+    Categoria VARCHAR(70) NOT NULL
+);
+
+-- Tabla Clientes
+CREATE TABLE Clientes (
+    Id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    DNI VARCHAR(70) NOT NULL,
+    Nombre VARCHAR(70) NOT NULL
+);    
+    
+-- Tabla Ventas
+CREATE TABLE Ventas (
+    Id_venta INT PRIMARY KEY AUTO_INCREMENT,
+    Fecha DATE NOT NULL,
+    Total DECIMAL(10, 2) NOT NULL,
+    Tipo_pago  VARCHAR(70) NOT NULL,
+    Id_usuario INT,
+    Id_cliente INT,
+    FOREIGN KEY (Id_usuario) REFERENCES Usuarios (Id_usuario),
+    FOREIGN KEY (Id_cliente) REFERENCES Clientes (Id_cliente)
+);
+
+-- Tabla DetallesVentas
+CREATE TABLE Detalles_Ventas (
+    Id_detallev INT PRIMARY KEY AUTO_INCREMENT,
+    Id_venta INT,
+    Id_producto INT,
+    Cantidad INT,
+    Importe DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (Id_venta) REFERENCES Ventas (Id_venta),
+    FOREIGN KEY (Id_producto) REFERENCES Productos (Id_producto)
+);  
+

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: MariaDb
--- Generation Time: Nov 15, 2024 at 06:24 PM
+-- Generation Time: Nov 18, 2024 at 04:46 PM
 -- Server version: 11.4.2-MariaDB-ubu2404
 -- PHP Version: 8.2.25
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Clientes` (
   `Id_cliente` int(11) NOT NULL,
-  `DNI` varchar(255) NOT NULL,
-  `Nombre` varchar(255) NOT NULL
+  `DNI` varchar(70) NOT NULL,
+  `Nombre` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
 --
@@ -38,8 +38,8 @@ CREATE TABLE `Clientes` (
 --
 
 INSERT INTO `Clientes` (`Id_cliente`, `DNI`, `Nombre`) VALUES
-(1, '33897234', 'Juan Parraz'),
-(2, '43678243', 'Marcos Jose');
+(1, '32546807', 'Dario'),
+(2, '42976524', 'Juan Parraz');
 
 -- --------------------------------------------------------
 
@@ -52,18 +52,17 @@ CREATE TABLE `Detalles_Ventas` (
   `Id_venta` int(11) DEFAULT NULL,
   `Id_producto` int(11) DEFAULT NULL,
   `Cantidad` int(11) DEFAULT NULL,
-  `Importe` decimal(10,2) NOT NULL,
-  `Total` decimal(10,2) NOT NULL,
-  `Tipo_pago` varchar(255) NOT NULL
+  `Importe` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
 --
 -- Dumping data for table `Detalles_Ventas`
 --
 
-INSERT INTO `Detalles_Ventas` (`Id_detallev`, `Id_venta`, `Id_producto`, `Cantidad`, `Importe`, `Total`, `Tipo_pago`) VALUES
-(2, 2, 2, 4, 5600.00, 87878.00, 'Efectivo'),
-(4, 4, 2, 79, 320323.00, 87878.00, 'Mercado Pago');
+INSERT INTO `Detalles_Ventas` (`Id_detallev`, `Id_venta`, `Id_producto`, `Cantidad`, `Importe`) VALUES
+(1, 1, 5, 3, 170.40),
+(2, 1, 4, 1, 600.00),
+(3, 1, 3, 2, 406.00);
 
 -- --------------------------------------------------------
 
@@ -73,11 +72,11 @@ INSERT INTO `Detalles_Ventas` (`Id_detallev`, `Id_venta`, `Id_producto`, `Cantid
 
 CREATE TABLE `Productos` (
   `Id_producto` int(11) NOT NULL,
-  `Cod_Barras` varchar(255) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
+  `Cod_Barras` varchar(70) NOT NULL,
+  `Nombre` varchar(70) NOT NULL,
   `Stock` int(11) NOT NULL,
   `Precio_Venta` decimal(10,2) NOT NULL,
-  `Categoria` varchar(255) NOT NULL
+  `Categoria` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
 --
@@ -85,12 +84,11 @@ CREATE TABLE `Productos` (
 --
 
 INSERT INTO `Productos` (`Id_producto`, `Cod_Barras`, `Nombre`, `Stock`, `Precio_Venta`, `Categoria`) VALUES
-(1, '43243242', 'Azucar Marilio', 50, 1.50, 'comestibles'),
-(2, '7657675757', 'Coca Cola 1Lrs', 100, 2.60, 'Bebidas'),
-(4, '5353454354', 'detergente', 534535, 13.56, 'Limpieza'),
-(5, '5234535', 'alfajor tatin', 56, 6500.00, 'Golosinas'),
-(9, '7777778', 'caramelos', 444000, 5453.00, 'Golosinas'),
-(13, '33232132321321321', 'Azucar Arcor 1kg', 70, 1200.00, 'Comestibles');
+(1, '231239873193', 'Arroz Marolio 1Kg', 80, 4.50, 'Comestibles'),
+(2, '876853453453', 'Yerba Mate Playadito 1kg', 100, 3.89, 'Comestibles'),
+(3, '213237657350', 'Coca Cola sin azucar 1Ltrs', 55, 203.00, 'Bebidas'),
+(4, '6546546547753', 'Arina Favorita 1KG', 30, 600.00, 'Comestibles'),
+(5, '6346898707234', 'Lavandina ayudin 500', 32, 56.80, 'Limpieza');
 
 -- --------------------------------------------------------
 
@@ -100,8 +98,8 @@ INSERT INTO `Productos` (`Id_producto`, `Cod_Barras`, `Nombre`, `Stock`, `Precio
 
 CREATE TABLE `Usuarios` (
   `Id_usuario` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Clave` varchar(255) NOT NULL,
+  `Nombre` varchar(70) NOT NULL,
+  `Clave` varchar(70) NOT NULL,
   `Tipo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
@@ -111,8 +109,8 @@ CREATE TABLE `Usuarios` (
 
 INSERT INTO `Usuarios` (`Id_usuario`, `Nombre`, `Clave`, `Tipo`) VALUES
 (1, 'admin', 'admin', 'Administrador'),
-(25, 'invitado', '1234', 'Empleado'),
-(32, 'dario', 'dario', 'Administrador');
+(2, 'invitado', '1234', 'Empleado'),
+(3, 'dario', 'dario', 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -123,6 +121,8 @@ INSERT INTO `Usuarios` (`Id_usuario`, `Nombre`, `Clave`, `Tipo`) VALUES
 CREATE TABLE `Ventas` (
   `Id_venta` int(11) NOT NULL,
   `Fecha` date NOT NULL,
+  `Total` decimal(10,2) NOT NULL,
+  `Tipo_pago` varchar(70) NOT NULL,
   `Id_usuario` int(11) DEFAULT NULL,
   `Id_cliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
@@ -131,9 +131,8 @@ CREATE TABLE `Ventas` (
 -- Dumping data for table `Ventas`
 --
 
-INSERT INTO `Ventas` (`Id_venta`, `Fecha`, `Id_usuario`, `Id_cliente`) VALUES
-(2, '2024-11-13', 1, 1),
-(4, '2024-11-13', 1, 2);
+INSERT INTO `Ventas` (`Id_venta`, `Fecha`, `Total`, `Tipo_pago`, `Id_usuario`, `Id_cliente`) VALUES
+(1, '2024-11-19', 1176.40, 'Mercado Pago', 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -187,25 +186,25 @@ ALTER TABLE `Clientes`
 -- AUTO_INCREMENT for table `Detalles_Ventas`
 --
 ALTER TABLE `Detalles_Ventas`
-  MODIFY `Id_detallev` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_detallev` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Productos`
 --
 ALTER TABLE `Productos`
-  MODIFY `Id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `Id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `Id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Ventas`
 --
 ALTER TABLE `Ventas`
-  MODIFY `Id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
