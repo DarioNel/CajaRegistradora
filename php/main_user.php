@@ -1,5 +1,5 @@
 <?php
-session_start();
+ob_start(); 
 include('connection.php'); 
 // Iniciar la sesión si aún no está iniciada
 if (session_status() == PHP_SESSION_NONE) {
@@ -71,6 +71,7 @@ if (!empty($_SESSION['carrito'])) {
     }
 }
 $conn->close();
+ob_end_flush();
 ?>
 <!DOCTYPE html>
 <html lang="en">
