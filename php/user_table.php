@@ -31,7 +31,7 @@ include ('connection.php');
            
         }
         ?>
-        <div class="table">
+        <div class="content-table">
             <table>
                 <tr>
                     <th>ID</th>

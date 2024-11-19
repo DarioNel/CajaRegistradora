@@ -21,7 +21,7 @@
     color: rgba(0, 0, 0, 0.884); 
 }
 
-.table {
+.content-table {
     background-color:  #a6d4a5;
     height: 300px;
     margin: 15px;
@@ -30,13 +30,22 @@
     text-align: center;    
 }
 
-.table table {
+.content-table table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.table table td, th {
+.content-table table th {
     border: 1px solid;
+    text-align: center;
+    background-color:#0d7728f5;
+    color: black;
+}
+
+.content-table table td {
+    border: 1px solid;
+    text-align: center;
+    font-weight: bold;       
 }
 
 .content-vuelto {

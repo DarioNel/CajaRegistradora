@@ -63,3 +63,20 @@
     border-radius:5px ;
     cursor: pointer;
 }
+
+.table-sales {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table-sales th {
+    border: 1px solid black;
+    text-align: center;
+    background-color: #0d7728f5;
+    color: beige;  
+}
+.table-sales td {
+    border: 1px solid black;
+    text-align: center;
+}

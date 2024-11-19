@@ -106,7 +106,7 @@ ob_end_flush();
                  <span class="total-valor"><?php echo "$" .  number_format($total, 2);?></span>
             </div>
         </div>
-        <div class="table">
+        <div class="content-table">
             <table>
                 <tr>
                     <th>ID</th>
