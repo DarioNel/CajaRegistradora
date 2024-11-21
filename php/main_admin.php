@@ -149,13 +149,16 @@ ob_end_flush();
             <div class="vuelto">
                 <?php 
                 // Verifico si el valor 'import' esta definido y es numerico
+                $vuelto=0;
                 if (isset($_POST['import']) && is_numeric($_POST['import'])) {
                     $import = (float) $_POST['import']; // Convertimos a float
+                    $vuelto = $import - $total;
                 } else {
                     $import = 0; 
+
                 }
 
-                $vuelto = $import - $total;
+                
                 ?>
                 <span class="vuelto-valor"><?php echo "$" . number_format($vuelto, 2);?></span>
                 
@@ -181,10 +184,10 @@ ob_end_flush();
             <h3 class="h3">Confirmar la venta</h3>
             <form action="sales_insert.php" method='POST'>
                 <div class="inputs-content">
-                    <input type="text" name="cli" placeholder="Nombre Cliente"/>
-                    <input type="number" name="dni" placeholder="DNI"/>
-                    <input type="date" name="fecha" placeholder="Fecha"/>
-                    <select class="tipo" name="pago" id="select">
+                    <input type="text" name="cli" placeholder="Nombre Cliente" required/>
+                    <input type="number" name="dni" placeholder="DNI" required/>
+                    <input type="date" name="fecha" placeholder="Fecha" required/>
+                    <select class="tipo" name="pago" id="select"required>
                         <option disabled selected >Tipo de Pago</option>
                         <option value="Efectivo">Efectivo</option>
                         <option value="Mercado Pago">Mercado Pago</option>

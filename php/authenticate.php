@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: main_admin.php");
                 exit();
             case 'Empleado':
-                header("Location: main_user.php");
+                header("Location: main_admin.php");
                 exit();
             default:
                 echo "Tipo de usuario no reconocido.";
